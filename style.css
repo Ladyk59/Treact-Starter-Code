@@ -1059,13 +1059,115 @@ FOOTER ↓
 
 footer {
     padding: 96px 32px;
-    background-color: rgb(100, 21, 255);
+    background: linear-gradient(135deg, rgb(100, 21, 255) 0%, rgb(80, 17, 204) 100%);
     margin-bottom: -32px;
     position: relative;
     overflow: hidden;
 }
 
+footer::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 360px;
+    height: 360px;
+    border-radius: 9999px;
+    background: rgba(80, 17, 204, 0.45);
+}
 
+.footer__row {
+    position: relative;
+    z-index: 2;
+}
+
+.footer__columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 48px 32px;
+}
+
+.footer__column {
+    width: calc(100% / 5 - 26px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer__column--title {
+    color: #f7fafc;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.footer__column--link {
+    margin-top: 20px;
+    color: #f7fafc;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.footer__divider {
+    margin: 64px 0 40px;
+    width: 100%;
+    height: 2px;
+    background: rgba(160, 174, 192, 0.35);
+}
+
+
+.footer__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.footer__logo--text {
+    margin-left: 12px;
+    color: #f7fafc;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.footer__copyright {
+    color: #cbd5e0;
+    font-size: 20px;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer__social {
+    width: 56px;
+    height: 56px;
+    border-radius: 9999px;
+    background: #f7fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.footer__social i {
+    color: #1a202c;
+    font-size: 22px;
+}
 /* 
 
 MOBILE RESPONSIVENESS ↓
@@ -1151,6 +1253,31 @@ MOBILE RESPONSIVENESS ↓
         width: 100%;
         max-width: 280px;
     }
+
+    .footer__column {
+        width: calc(100% / 3 - 22px);
+    }
+
+    .footer__column--title {
+        font-size: 18px;
+    }
+
+    .footer__column--link {
+        font-size: 16px;
+    }
+
+    .footer__bottom {
+        gap: 24px;
+    }
+
+    .footer__logo--text {
+        font-size: 36px;
+    }
+
+    .footer__copyright {
+        font-size: 18px;
+        text-align: center;
+    }
 }
 
 @media(max-width: 640px) {
@@ -1167,5 +1294,13 @@ MOBILE RESPONSIVENESS ↓
     .header__row {
         flex-direction: column;
         align-items: center;
+    }
+
+    .footer__columns {
+        gap: 32px;
+    }
+
+    .footer__column {
+        width: calc(100% / 2 - 16px);
     }
 }

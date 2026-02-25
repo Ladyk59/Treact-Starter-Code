@@ -286,14 +286,12 @@ HEADER / ABOUT US ↓
 .header__img--wrapper {
     width: 60%;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
     border: none;
 }
 
 .header__img {
     width: 100%;
-    max-width: 512px;
+  
 }
 
 
